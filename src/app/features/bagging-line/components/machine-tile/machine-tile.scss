@@ -1,0 +1,58 @@
+:host {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 6rem;
+  height: 100%;
+  padding: 0.75rem 1.75rem 0.75rem 1rem;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+:host(.variant-detailed) {
+  container-type: inline-size;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  height: auto;
+  aspect-ratio: 12 / 11;
+  padding: 1.25rem 0.5rem 0.75rem;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+:host(.status-running) .status-icon {
+  color: var(--color-status-running);
+}
+
+:host(.status-alarm) {
+  background: var(--color-status-alarm);
+  color: var(--color-on-status);
+}
+
+:host(.status-warning) {
+  background: var(--color-status-warning);
+  color: var(--color-on-status);
+}
+
+// Set warning triangle filled
+:host(.status-warning) .status-icon {
+  font-variation-settings: 'FILL' 1;
+}
+
+.status-icon {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  font-size: 1.125rem;
+}
+
+.type-icon {
+  font-size: clamp(1.75rem, 36cqi, 3rem);
+}
+
+:host(.variant-detailed) .name {
+  font-size: clamp(0.8125rem, 13cqi, 1.125rem);
+}

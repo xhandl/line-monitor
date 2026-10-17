@@ -1,0 +1,9 @@
+<nav class="navigation" aria-label="Bagging line machines">
+  <ul class="navigation__list">
+    @for (machine of machines(); track machine.id) {
+      <li>
+        <app-machine-tile [machine]="machine" />
+      </li>
+    }
+  </ul>
+</nav>

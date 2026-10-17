@@ -1,0 +1,57 @@
+:host {
+  display: flex;
+  flex: 1;
+}
+
+.overview {
+  container-type: inline-size;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.line__item {
+  display: flex;
+  align-items: center;
+}
+
+// Line connecting neighbouring machines
+.line__item + .line__item::before {
+  content: '';
+  display: block;
+  width: clamp(1rem, 6cqi, 5rem);
+  height: 3px;
+  background: var(--color-line);
+}
+
+app-machine-tile {
+  width: clamp(5rem, 16cqi, 9rem);
+}
+
+// Not enough room for a horizontal line: stack machines vertically.
+@container (max-width: 30rem) {
+  .line,
+  .line__item {
+    flex-direction: column;
+  }
+
+  .line__item + .line__item::before {
+    width: 3px;
+    height: 2rem;
+  }
+
+  app-machine-tile {
+    width: clamp(7rem, 50cqi, 10rem);
+  }
+}

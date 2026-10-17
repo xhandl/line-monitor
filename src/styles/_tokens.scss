@@ -1,0 +1,19 @@
+// Design tokens exposed as CSS custom properties.
+
+$tokens: (
+  'color-bg': #ffffff,
+  'color-surface': #dcdcdc,
+  'color-text': #4a4a4a,
+  'color-primary': #009a93,
+  'color-status-running': #5aa700,
+  'color-status-alarm': #fa3238,
+  'color-status-warning': #fb9000,
+  'color-on-status': #ffffff,
+  'color-line': #5aa700,
+);
+
+:root {
+  @each $name, $value in $tokens {
+    --#{$name}: #{$value};
+  }
+}

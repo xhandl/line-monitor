@@ -1,0 +1,11 @@
+<section class="overview" aria-labelledby="overview-title">
+  <h1 id="overview-title" class="visually-hidden">Bagging line overview</h1>
+
+  <ol class="line" aria-label="Machines in production order">
+    @for (machine of machines(); track machine.id) {
+      <li class="line__item">
+        <app-machine-tile [machine]="machine" variant="detailed" />
+      </li>
+    }
+  </ol>
+</section>

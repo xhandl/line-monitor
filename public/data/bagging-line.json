@@ -1,0 +1,6 @@
+[
+  { "id": "scale", "type": "scale", "name": "Scale", "status": "running" },
+  { "id": "bag-attach", "type": "bagAttach", "name": "Attacher", "status": "alarm" },
+  { "id": "packer", "type": "packer", "name": "Packer", "status": "running" },
+  { "id": "bag-closer", "type": "bagCloser", "name": "Closer", "status": "warning" }
+]

@@ -1,0 +1,47 @@
+:host {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+// Fills the page area so the spinner is centred where the page will appear.
+.loading {
+  flex: 1;
+}
+
+// Error and empty states take the place of the page.
+.state {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.state__message {
+  margin: 0;
+  font-weight: 700;
+}
+
+.state__message--error {
+  color: var(--color-status-alarm);
+}
+
+.state__action {
+  padding: 0.5rem 1.25rem;
+  border: 0;
+  border-radius: 4px;
+  background: var(--color-primary);
+  color: var(--color-on-status);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 3px solid var(--color-text);
+    outline-offset: 2px;
+  }
+}

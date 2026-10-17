@@ -1,0 +1,20 @@
+<header class="main-header">
+  <a class="logo" routerLink="/">
+    <img ngSrc="logo.svg" alt="Line Monitor – Home" width="167" height="32" />
+  </a>
+
+  <div class="info">
+    <time class="info__item" [attr.datetime]="now().toISOString()">
+      <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+      {{ now() | date: 'dd.MM.yyyy HH:mm' }}
+    </time>
+
+    @if (user(); as currentUser) {
+      <span class="info__item">
+        <span class="material-symbols-outlined" aria-hidden="true">account_circle</span>
+        <span class="visually-hidden">Logged in as</span>
+        {{ currentUser.name }}
+      </span>
+    }
+  </div>
+</header>

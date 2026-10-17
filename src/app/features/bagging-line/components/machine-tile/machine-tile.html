@@ -1,0 +1,9 @@
+@if (variant() === 'detailed') {
+  <span class="type-icon material-symbols-outlined" aria-hidden="true">{{ typeIcon() }}</span>
+}
+
+<span class="name">{{ machine().name }}</span>
+
+<span class="status-icon material-symbols-outlined" [attr.aria-label]="statusLabel()" role="img">
+  {{ statusIcon() }}
+</span>
